@@ -64,7 +64,7 @@ export default function App() {
         setShowModal(prev => !prev);
     }
 
-    const isLastPage = page === totalPages;
+    const isLastPage : boolean = page === totalPages;
 
     return (
             <div className={css.container}>
