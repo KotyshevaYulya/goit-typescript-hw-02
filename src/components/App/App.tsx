@@ -27,11 +27,11 @@ export default function App() {
             return;
         }
 
-        async function fetchImages() {
+        async function fetchImages(): Promise<void> {
             try {
                 setIsLoading(true);
                 setError(false);
-                const {results, total_pages} = await getImages(searchQuery, page);
+                const {results, total_pages} : {results: Gallery[], total_pages: number} = await getImages(searchQuery, page);
                 setGallery((prevState) => [...prevState, ...results]);
                 setTotalPages(total_pages);
             } catch {
